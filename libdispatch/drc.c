@@ -513,6 +513,7 @@ NC_rcfile_insert(const char* key, const char* value, const char* hostport)
     
     if(rc == NULL) {
 	rc = nclistnew();
+	globalstate->rcinfo.triples = rc;
 	if(rc == NULL) {ret = NC_ENOMEM; goto done;}
     }
     triple = rclocate(key,hostport);
